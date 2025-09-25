@@ -1,103 +1,141 @@
+"use client"
+import About from "@/components/Home/About";
+import Contact from "@/components/Home/Contact";
+import Services from "@/components/Home/Services";
+import { Button } from "@/components/ui/button";
+import { Carousel } from "antd";
+import { Phone } from "lucide";
+import { CalendarDays, Mail, PhoneCall, PhoneCallIcon } from "lucide-react";
 import Image from "next/image";
+import {motion} from "framer-motion"
 
 export default function Home() {
+  const contentStyle: React.CSSProperties = {
+    height: "100%",
+    width: "100%", // instead of fixed 500px
+    color: "#fff",
+    textAlign: "center",
+    background: "#364d79",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="flex flex-col ">
+        <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row bg-[#0C0B38] relative w-full h-full px-6 md:px-20 py-10 md:py-20 gap-10 lg:gap-20 justify-between items-center">
+        <motion.div 
+        initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            ease: "easeInOut",
+            delay: 1,
+            duration: 1,
+            stiffness: 200,
+          }}
+          viewport={{ once: true }}
+        className="flex flex-col gap-4 lg:gap-8">
+          <div className="flex items-center gap-4">
+            <div className="w-1 h-5 bg-[#5E5EEE] rounded-md" />
+            <p className="text-sm md:text-base text-white">
+              Trusted in-home care that keeps your loved ones safe and
+              independent
+            </p>
+          </div>
+          <div className="max-w-3xl">
+            <h1 className="text-xl md:text-4xl text-white">
+              Personalized visits. Compassionate staff. Reliable support at
+              home.
+            </h1>
+          </div>
+          <div className="max-w-3xl">
+            <p className="text-sm md:text-base text-[#e5e5e5]">
+              We provide professional, affordable home care that helps people
+              live with dignity in their own homes. Whether you need hourly
+              help, overnight support, or full-time care, our trained caregivers
+              deliver respectful, consistent support tailored to each person.
+            </p>
+          </div>
+          <div className="flex gap-8">
+            <Button className="bg-[#5E5EEE] text-base font-medium hover:bg-[#2AC28E] transition-all duration-300 cursor-pointer">
+              Appointment
+            </Button>
+            <Button className="bg-white text-base text-black font-medium hover:bg-[#2AC28E] transition-all duration-300 cursor-pointer">
+              <PhoneCall /> 866-212-0317
+            </Button>
+          </div>
+        </motion.div>
+        <motion.div 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          ease: "easeInOut",
+          delay: 1,
+          duration: 1,
+          stiffness: 200,
+        }}
+        viewport={{ once: true }}
+        className="">
+          <div className=" w-[400px] h-[500px] rounded-xl px-8 md:px-0">
+            <Carousel effect="fade" dots={false} autoplay autoplaySpeed={7000} className="h-full rounded-xl">
+              <div className="relative w-[400px] h-[500px]">
+                <Image src={'/doc.jpg'} alt="doc" fill className="object-cover rounded-xl" />
+              </div>
+              <div className="relative w-[400px] h-[500px]">
+                <Image src={'/doc2.jpg'} alt="doc" fill className="object-cover rounded-xl" />
+              </div>
+              <div className="relative w-[400px] h-[500px]">
+                <Image src={'/docand.jpg'} alt="doc" fill className="object-cover rounded-xl" />
+              </div>
+            </Carousel>
+          </div>
+        </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <motion.div initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            ease: "easeInOut",
+            delay: 1,
+            duration: 1,
+            stiffness: 200,
+          }}
+          viewport={{ once: true }} className="absolute -right-1/3 bottom-[-80px] transform -translate-x-1/2 bg-white rounded-xl lg:flex justify-center items-center shadow-lg hidden">
+          <div className="flex flex-col py-6 px-10 gap-2">
+            <h3 className="text-xl text-[] font-medium">Book an Appointment</h3>
+            <div className="flex gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+              <div className="flex px-3 py-3 justify-between items-center border-1 border-[#e5e5e5] rounded-lg gap-4">
+                <div className="flex flex-col ">
+                  <p className="text-base text-black font-normal">Email Address</p>
+                  <p className="text-base text-black font-medium">Medicalinfo@gmail.com</p>
+                </div>
+                <div className="p-2 bg-[#E5E5F0] rounded-full"><Mail /></div>
+              </div>
+              <div className="flex px-3 py-3 justify-between items-center border-1 border-[#e5e5e5] rounded-lg gap-4">
+                <div className="flex flex-col ">
+                  <p className="text-base text-black font-normal">Appointment Date</p>
+                  <p className="text-base text-black font-medium">29 December. 2023</p>
+                </div>
+                <div className="p-2 bg-[#E5E5F0] rounded-full"><CalendarDays /></div>
+              </div>
+              <div className="flex px-3 py-3 justify-between items-center border-1 border-[#e5e5e5] rounded-lg  gap-4">
+                <div className="flex flex-col ">
+                  <p className="text-base text-black font-normal">Phone No</p>
+                  <p className="text-base text-black font-medium">866-212-0317 | 682-365-7517</p>
+                </div>
+                <div className="p-2 bg-[#E5E5F0] rounded-full"><PhoneCallIcon /></div>
+              </div>
+            </div>
+            <div className="flex mt-8">
+            <Button className="text-xl p-3 bg-[#2AC28E] hover:bg-[#2AC28E] cursor-pointer">Book Now</Button>
+            </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+        <About />
+        <Services />
+        <Contact />
+    </>
   );
 }
