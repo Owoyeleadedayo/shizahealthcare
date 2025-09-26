@@ -214,7 +214,7 @@ const page = () => {
                           id="time-picker"
                           step="1"
                           defaultValue="10:30:00"
-                          className="bg-black text-white appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+                          className="bg-black text-white border-1 border-black appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
                         />
                       </div>
                     </div>
