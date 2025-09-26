@@ -25,7 +25,7 @@ const Header = () => {
   }, []);
 
   const NavLinks = () => (
-    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+    <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
       <Link href={"/"}>
         <p className="relative text-lg text-black font-medium capitalize
           after:content-[''] after:absolute after:left-1/2 after:bottom-0 
@@ -51,7 +51,7 @@ const Header = () => {
         </p>
       </Link>
       <Link
-        href={"/contact"}
+        href={"/contactUs"}
         className="flex items-center px-4 py-1 bg-[#5E5EEE] rounded-2xl hover:transition-all hover:duration-300"
       >
         <p className="text-lg text-white font-medium capitalize">
@@ -63,7 +63,7 @@ const Header = () => {
 
   return (
     <div
-      className={`flex justify-between items-center sticky top-0 z-10 px-6 md:px-20 py-2 bg-white transition-shadow duration-300 ${
+      className={`flex justify-between items-center sticky top-0 z-10 px-8 md:px-10 lg:px-20 py-2 bg-white transition-shadow duration-300 ${
         scrolled ? "shadow-md" : ""
       }`}
     >
@@ -77,10 +77,10 @@ const Header = () => {
         />
       </Link>
 
-      <div className="hidden md:flex items-center gap-6">
+      <div className="hidden lg:flex items-center gap-6">
         <NavLinks />
       </div>
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
             <button>
