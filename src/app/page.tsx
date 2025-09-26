@@ -99,7 +99,7 @@ export default function Home() {
             duration: 1,
             stiffness: 200,
           }}
-          viewport={{ once: true }} className="absolute -right-1/3 bottom-[-80px] transform -translate-x-1/2 bg-white rounded-xl lg:flex justify-center items-center shadow-lg hidden">
+          viewport={{ once: true }} className="absolute bottom-[-80px] transform translate-x-1/16 bg-white rounded-xl lg:flex justify-center items-center shadow-lg hidden">
           <div className="flex flex-col py-6 px-10 gap-2">
             <h3 className="text-xl text-[] font-medium">Book an Appointment</h3>
             <div className="flex gap-8">
