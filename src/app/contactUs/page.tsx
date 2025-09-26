@@ -30,8 +30,8 @@ const page = () => {
       .then((data) => setCities(data));
   }, []);
 
-  const [open, setOpen] = React.useState(false);
-  const [date, setDate] = React.useState<Date | undefined>(undefined);
+  const [open, setOpen] = useState(false);
+  const [date, setDate] = useState<Date | undefined>(undefined);
   return (
     <>
       <div className="flex flex-col">
