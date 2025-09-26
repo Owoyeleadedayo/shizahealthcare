@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import {motion} from "framer-motion"
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -37,9 +38,11 @@ const About = () => {
             planning so each client receives the right level of support.
           </p>
           <div>
+            <Link href="/about">
             <Button className="w-[100px] h-[35px] text-lg cursor-pointer">
               More...
             </Button>
+            </Link>
           </div>
         </div>
         <div className="lg:flex relative gap-4 hidden">
