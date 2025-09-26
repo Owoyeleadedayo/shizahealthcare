@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 
-const page = () => {
+const Page = () => {
   const [cities, setCities] = useState<string[]>([]);
 
   useEffect(() => {
@@ -295,4 +295,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
