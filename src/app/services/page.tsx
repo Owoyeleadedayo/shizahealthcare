@@ -40,7 +40,7 @@ const page = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col px-8 md:px-20 py-5 md:py-10 gap-6 md:gap-10">
+        <div className="flex flex-col px-8 md:px-10 lg:px-20 py-5 md:py-10 gap-6 md:gap-10">
           <div className="flex flex-col w-full gap-3">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full" />
@@ -61,7 +61,7 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {service.map((item, index) => (
               <div
                 key={index}

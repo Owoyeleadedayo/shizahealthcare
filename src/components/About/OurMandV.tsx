@@ -5,7 +5,7 @@ import React from "react";
 const OurMandV = () => {
   return (
     <>
-      <div className="flex flex-col px-8  md:p-20 gap-10 md:gap-20 pt-10">
+      <div className="flex flex-col px-8 md:p-10 lg:p-20 gap-10 md:gap-20 pt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           <div className="flex flex-col justify-center items-center border px-10 py-4 rounded-xl gap-4 shadow-md">
             <p className="text-3xl text-black font-semibold">Our Vision</p>

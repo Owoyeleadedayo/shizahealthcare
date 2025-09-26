@@ -17,14 +17,14 @@ const AboutPage = () => {
         stiffness: 200,
       }}
       viewport={{ once: true }}
-      className="flex bg-white w-full h-full flex-col lg:flex-row lg:justify-between justify-center items-center px-6 lg:px-20 pt-20 pb-0 gap-20">
+      className="flex bg-white w-full h-full flex-col lg:flex-row lg:justify-between justify-center items-center px-8 md:px-10 lg:px-20 pt-20 pb-0 gap-20">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full" />
             <p className="text-lg text-black font-medium">About Us</p>
           </div>
-          <div className="lg:max-w-lg">
-            <h2 className="text-4xl text-black font-semibold capitalize">
+          <div className=" lg:max-w-lg">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-black font-semibold capitalize">
               Care you can trust, people who care
             </h2>
           </div>
