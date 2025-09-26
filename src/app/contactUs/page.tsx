@@ -71,7 +71,7 @@ const page = () => {
           <div className="flex flex-col py-6 px-10 gap-2 border-1 rounded-xl">
             <h3 className="text-xl text-[] font-medium">Book an Appointment</h3>
             <div className="flex gap-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="flex px-3 py-3 justify-between items-center border-1 border-[#e5e5e5] rounded-lg gap-4">
                   <div className="flex flex-col ">
                     <p className="text-base text-black font-normal">
@@ -112,7 +112,7 @@ const page = () => {
           </div>
         </motion.div>
 
-        <div className="relative bg-[url('/bacc.jpg')] bg-cover bg-center px-10 md:px-40 py-10 md:py-20">
+        <div className="relative bg-[url('/bacc.jpg')] bg-cover bg-center px-8 lg:px-40 py-10 md:py-20">
           <div className="absolute inset-0 bg-[#5E5EEE]/60"></div>
           <motion.div
             initial={{ opacity: 0, y: 100 }}
@@ -134,12 +134,12 @@ const page = () => {
                 className="object-cover"
               />
             </div>
-            <div className="flex w-[600px] flex-col justify-center gap-3 px-5 py-3 md:p-10">
-              <p className="text-xl md:text-2xl text-black font-medium">
+            <div className="flex w-full lg:w-[600px] flex-col justify-center gap-3 px-5 py-3 md:p-10">
+              <p className="text-lg md:text-2xl text-black font-medium">
                 Make an appointment
               </p>
               <div className="flex flex-col w-full gap-3">
-                <div className="flex w-full  gap-3">
+                <div className="flex flex-col md:flex-row w-full  gap-3">
                   <div className="grid w-full gap-1">
                     <Label
                       htmlFor="name"
@@ -159,7 +159,7 @@ const page = () => {
                     <Input type="email" id="email" placeholder="Email" />
                   </div>
                 </div>
-                <div className="flex w-full  gap-3">
+                <div className="flex flex-col md:flex-row w-full  gap-3">
                   <div className="grid w-full gap-1">
                     <Label
                       htmlFor="phoneNumber"
@@ -220,7 +220,7 @@ const page = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex w-full  gap-3">
+                <div className="flex flex-col md:flex-row w-full  gap-3">
                   <div className="grid w-full gap-1">
                     <Label
                       htmlFor="phoneNumber"
