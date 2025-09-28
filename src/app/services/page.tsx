@@ -62,14 +62,14 @@ const page = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-            {service.map((item) => (
+            {service.map((serve, idx) => (
               <div
-                key={item.title}
+                key={idx}
                 className="flex flex-col px-4 py-6 items-center gap-2 border-1 border-[#e5e5e5] rounded-xl shadow-md"
               >
-                <p className="text-xl text-black font-medium">{item.title}</p>
+                <p className="text-xl text-black font-medium">{serve.title}</p>
                 <p className="text-lg textblack font-normal capitalize">
-                  {item.desc}
+                  {serve.desc}
                 </p>
               </div>
             ))}
