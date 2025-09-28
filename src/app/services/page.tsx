@@ -2,7 +2,7 @@ import { Sparkle } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-const page = () => {
+const ServicesPage = () => {
   const service = [
     {
       title: "Home Health Aide",
@@ -128,4 +128,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ServicesPage;
