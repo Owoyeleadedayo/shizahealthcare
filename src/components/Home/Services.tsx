@@ -1,7 +1,19 @@
+import Link from "next/link";
 import React from "react";
 import { Card, CardContent } from "../ui/card";
 
 const Services = () => {
+   const firstCard = [
+    {
+      title: "Home Health Aide"
+    },
+    {
+      title: "Attendant Services"
+    },
+    {
+      title: "Companion Care"
+    },
+   ]
   return (
     <>
       <div className="flex flex-col bg-white w-full h-full justify-between items-center px-6 lg:px-20 md:py-20 py-10 gap-8 md:gap-16">
@@ -26,34 +38,37 @@ const Services = () => {
         </div>
         <div className="flex flex-col gap-6 border p-16 rounded-lg shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
-            <Card>
+            {firstCard.map((title) => (
+              <Link href={"/services"}>
+                <Card key={title.title}>
               <CardContent>
-                <p className="text-xl text-center text-black font-medium">Home Health Aide</p>
+                <p className="text-xl text-center text-black font-medium">
+                  {title.title}
+                </p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent>
-                <p className="text-xl text-center text-black font-medium">Attendant Services</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <p className="text-xl text-center text-black font-medium">Companion Care</p>
-              </CardContent>
-            </Card>
-            
+              </Link>
+            ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
+            <Link href={"/services"}>
+              <Card>
+                <CardContent>
+                  <p className="text-xl text-center text-black font-medium">
+                    Elderly & Hospital Sitters
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href={"/services"}>
             <Card>
               <CardContent>
-                <p className="text-xl text-center text-black font-medium">Elderly & Hospital Sitters</p>
+                <p className="text-xl text-center text-black font-medium">
+                  Transportation Services
+                </p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent>
-                <p className="text-xl text-center text-black font-medium">Transportation Services</p>
-              </CardContent>
-            </Card>
+            </Link>
           </div>
         </div>
       </div>

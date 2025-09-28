@@ -20,18 +20,41 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
+import { toast } from "sonner";
 
 const Page = () => {
-  const [cities, setCities] = useState<string[]>([]);
-
-  useEffect(() => {
-    fetch("/data/cities.json")
-      .then((res) => res.json())
-      .then((data) => setCities(data));
-  }, []);
-
   const [open, setOpen] = useState(false);
   const [date, setDate] = useState<Date | undefined>(undefined);
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mjkagapa", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        toast.success("Your appointment request has been sent!");
+        form.reset();
+        setDate(undefined);
+      } else {
+        toast.error("Oops! Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      toast.error("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       <div className="flex flex-col">
@@ -78,7 +101,7 @@ const Page = () => {
                       Email Address
                     </p>
                     <p className="text-base text-black font-medium">
-                      Medicalinfo@gmail.com
+                      shizahealthcare@gmail.com
                     </p>
                   </div>
                 </div>
@@ -134,7 +157,10 @@ const Page = () => {
                 className="object-cover"
               />
             </div>
-            <div className="flex w-full lg:w-[600px] flex-col justify-center gap-3 px-5 py-3 md:p-10">
+            <form
+              onSubmit={handleSubmit}
+              className="flex w-full lg:w-[600px] flex-col justify-center gap-3 px-5 py-3 md:p-10"
+            >
               <p className="text-lg md:text-2xl text-black font-medium">
                 Make an appointment
               </p>
@@ -147,7 +173,13 @@ const Page = () => {
                     >
                       Name
                     </Label>
-                    <Input type="name" id="name" placeholder="Enter Name" />
+                    <Input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Enter Name"
+                      required
+                    />
                   </div>
                   <div className="grid w-full gap-1">
                     <Label
@@ -156,7 +188,13 @@ const Page = () => {
                     >
                       Email
                     </Label>
-                    <Input type="email" id="email" placeholder="Email" />
+                    <Input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Email"
+                      required
+                    />
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row w-full  gap-3">
@@ -170,7 +208,9 @@ const Page = () => {
                     <Input
                       type="number"
                       id="phoneNumber"
+                      name="phoneNumber"
                       placeholder="Enter Phone Number"
+                      required
                     />
                   </div>
                   <div className="grid w-full gap-1">
@@ -187,33 +227,41 @@ const Page = () => {
                             <Button
                               id="date-picker"
                               className="w-36 justify-between font-normal"
+                              type="button" 
                             >
                               {date ? date.toLocaleDateString() : "Select date"}
                               <ChevronDownIcon />
                             </Button>
                           </PopoverTrigger>
+
                           <PopoverContent
                             className="w-auto overflow-hidden p-0"
                             align="start"
                           >
                             <Calendar
                               mode="single"
-                              selected={date}
+                              selected={date || undefined}
                               captionLayout="dropdown"
-                              onSelect={(date) => {
-                                setDate(date);
+                              onSelect={(d) => {
+                                setDate(d);
                                 setOpen(false);
                               }}
                             />
                           </PopoverContent>
                         </Popover>
+                        <input
+                          type="hidden"
+                          name="date"
+                          value={date ? date.toLocaleDateString() : ""}
+                        />
                       </div>
                       <div className="flex flex-col gap-3">
                         <Input
                           type="time"
                           id="time-picker"
+                          name="time"
                           step="1"
-                          defaultValue="10:30:00"
+                          defaultValue="00:00:00"
                           className="bg-black text-white border-1 border-black appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
                         />
                       </div>
@@ -223,41 +271,16 @@ const Page = () => {
                 <div className="flex flex-col md:flex-row w-full  gap-3">
                   <div className="grid w-full gap-1">
                     <Label
-                      htmlFor="phoneNumber"
-                      className="text-base text-black font-medium capitalize"
-                    >
-                      description of needs
-                    </Label>
-                    <Select>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Theme" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="light">Light</SelectItem>
-                        <SelectItem value="dark">Dark</SelectItem>
-                        <SelectItem value="system">System</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="grid w-full gap-1">
-                    <Label
                       htmlFor="email"
                       className="text-base text-black font-medium"
                     >
                       City
                     </Label>
-                    <Select>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select City" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {cities.map((city) => (
-                          <SelectItem key={city} value={city.toLowerCase()}>
-                            {city}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <Input type="text"
+                      name="city"
+                      id="city"
+                      placeholder="Enter City"
+                      required />
                   </div>
                 </div>
 
@@ -268,7 +291,7 @@ const Page = () => {
                   >
                     Your Address
                   </Label>
-                  <Textarea className="h-[60px]" />
+                  <Textarea name="address" className="h-[60px]" required />
                 </div>
 
                 <div className="grid w-full gap-1">
@@ -278,16 +301,19 @@ const Page = () => {
                   >
                     Your Message
                   </Label>
-                  <Textarea className="h-[100px]" />
+                  <Textarea name="message" className="h-[100px]" required />
                 </div>
 
                 <div>
-                  <Button className="cursor-pointer text-base text-white font-medium">
-                    Submit
+                  <Button
+                    className="cursor-pointer text-base text-white font-medium"
+                    disabled={loading}
+                  >
+                    {loading ? "Sending..." : "Submit"}
                   </Button>
                 </div>
               </div>
-            </div>
+            </form>
           </motion.div>
         </div>
       </div>

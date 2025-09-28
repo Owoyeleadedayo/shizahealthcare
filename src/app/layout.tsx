@@ -1,6 +1,8 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google"; 
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -26,6 +28,8 @@ export default function RootLayout({
       >
         <Header/>
         {children}
+        <Toaster richColors position="top-right" />
+        <Footer />
       </body>
     </html>
   );

@@ -8,6 +8,8 @@ import { Phone } from "lucide";
 import { CalendarDays, Mail, PhoneCall, PhoneCallIcon } from "lucide-react";
 import Image from "next/image";
 import {motion} from "framer-motion"
+import Link from "next/link";
+import Career from "@/components/About/Career";
 
 export default function Home() {
   const contentStyle: React.CSSProperties = {
@@ -61,7 +63,7 @@ export default function Home() {
               Appointment
             </Button>
             <Button className="bg-white text-base text-black font-medium hover:bg-[#2AC28E] transition-all duration-300 cursor-pointer">
-              <PhoneCall /> 866-212-0317
+              <PhoneCall /> 866-212-0317 | 682-365-7517
             </Button>
           </div>
         </motion.div>
@@ -107,7 +109,7 @@ export default function Home() {
               <div className="flex px-3 py-3 justify-between items-center border-1 border-[#e5e5e5] rounded-lg gap-4">
                 <div className="flex flex-col ">
                   <p className="text-base text-black font-normal">Email Address</p>
-                  <p className="text-base text-black font-medium">Medicalinfo@gmail.com</p>
+                  <p className="text-base text-black font-medium">shizahealthcare@gmail.com</p>
                 </div>
                 <div className="p-2 bg-[#E5E5F0] rounded-full"><Mail /></div>
               </div>
@@ -127,7 +129,9 @@ export default function Home() {
               </div>
             </div>
             <div className="flex mt-8">
-            <Button className="text-xl p-3 bg-[#2AC28E] hover:bg-[#2AC28E] cursor-pointer">Book Now</Button>
+              <Link href="/contactUs">
+              <Button className="text-xl p-3 bg-[#2AC28E] hover:bg-[#2AC28E] cursor-pointer">Book Now</Button>
+              </Link>
             </div>
             </div>
           </div>
@@ -135,6 +139,7 @@ export default function Home() {
       </div>
         <About />
         <Services />
+        <Career/>
         <Contact />
     </>
   );
