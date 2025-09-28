@@ -44,13 +44,13 @@ const Career = () => {
   };
   return (
     <>
-      <div className="flex flex-col my-10 px-8 md:px-10 lg:px-20 p-20 gap-20">
+      <div className="flex flex-col my-0 px-8 md:px-10 lg:px-20 p-10 gap-20">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full" />
             <p className="text-lg text-black font-medium">Career</p>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="flex md:flex-row flex-col justify-center md:justify-between items-center gap-3">
             <div className=" lg:max-w-xl">
               <h2 className="text-2xl md:text-3xl lg:text-4xl text-black font-semibold capitalize">
                 Want to be part of our mission

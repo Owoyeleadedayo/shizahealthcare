@@ -58,7 +58,7 @@ export default function Home() {
               deliver respectful, consistent support tailored to each person.
             </p>
           </div>
-          <div className="flex gap-8">
+          <div className="flex md:flex-row flex-col gap-4 md:gap-8">
             <Button className="bg-[#5E5EEE] text-base font-medium hover:bg-[#2AC28E] transition-all duration-300 cursor-pointer">
               Appointment
             </Button>
