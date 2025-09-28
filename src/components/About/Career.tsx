@@ -57,7 +57,7 @@ const Career = () => {
               </h2>
             </div>
             <p className="text-base text-black font-normal lg:max-w-lg">
-              We're looking for passionate people to join us on our mission. We
+              We&apos;re looking for passionate people to join us on our mission. We
               value flat hierachies, clear communication and full ownership and
               responsibility
             </p>
