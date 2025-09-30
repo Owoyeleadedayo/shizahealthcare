@@ -4,7 +4,6 @@ import Contact from "@/components/Home/Contact";
 import Services from "@/components/Home/Services";
 import { Button } from "@/components/ui/button";
 import { Carousel } from "antd";
-import { Phone } from "lucide";
 import { CalendarDays, Mail, PhoneCall, PhoneCallIcon } from "lucide-react";
 import Image from "next/image";
 import {motion} from "framer-motion"
