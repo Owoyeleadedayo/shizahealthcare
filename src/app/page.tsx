@@ -13,7 +13,7 @@ import Career from "@/components/About/Career";
 export default function Home() {
   const contentStyle: React.CSSProperties = {
     height: "100%",
-    width: "100%", // instead of fixed 500px
+    width: "100%", 
     color: "#fff",
     textAlign: "center",
     background: "#364d79",
@@ -82,11 +82,11 @@ export default function Home() {
               <div className="relative w-[400px] h-[500px]">
                 <Image src={'/doc.jpg'} alt="doc" fill className="object-cover rounded-xl" />
               </div>
-              <div className="relative w-[400px] h-[500px]">
-                <Image src={'/doc2.jpg'} alt="doc" fill className="object-cover rounded-xl" />
+              <div className="relative w-[400px] md:w-[700px] h-[300px]">
+                <Image src={'/drr1.jpeg'} alt="doc" fill className="object-cover rounded-xl" />
               </div>
               <div className="relative w-[400px] h-[500px]">
-                <Image src={'/docand.jpg'} alt="doc" fill className="object-cover rounded-xl" />
+                <Image src={'/drr2.jpeg'} alt="doc" fill className="object-contain rounded-xl" />
               </div>
             </Carousel>
           </div>
