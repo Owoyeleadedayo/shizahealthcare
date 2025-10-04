@@ -128,7 +128,7 @@ const Page = () => {
           </div>
         </motion.div>
 
-        <div className="flex px-8 md:px-10 lg:px-20 py-5 md:py-10 gap-6 md:gap-4 justify-between items-center">
+        <div className="flex flex-col md:flex-row px-8 md:px-10 lg:px-20 py-5 md:py-10 gap-6 md:gap-4 justify-between md:items-center">
           <div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full" />
