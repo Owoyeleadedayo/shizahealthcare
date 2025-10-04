@@ -82,7 +82,7 @@ const Page = () => {
             stiffness: 200,
           }}
           viewport={{ once: true }}
-          className="bg-white rounded-xl lg:flex justify-center items-center py-10"
+          className="bg-white rounded-xl lg:flex flex-col justify-center items-center pb-10 gap-8"
         >
           <div className="flex flex-col py-6 px-10 gap-2 border-1 rounded-xl">
             <h3 className="text-xl text-[] font-medium">Book an Appointment</h3>
@@ -127,6 +127,16 @@ const Page = () => {
             </div>
           </div>
         </motion.div>
+
+        <div className="flex flex-col px-8 md:px-10 lg:px-20 py-5 md:py-10 gap-6 md:gap-4">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              <p className="text-lg text-black font-medium">Our Address</p>
+            </div>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-black font-semibold capitalize">
+                120,Wanda Way Suite 100C Hurst, Texas 76053
+              </h2>
+          </div>
 
         <div className="relative bg-[url('/bacc.jpg')] bg-cover bg-center px-8 lg:px-40 py-10 md:py-20">
           <div className="absolute inset-0 bg-[#5E5EEE]/60"></div>
@@ -220,7 +230,7 @@ const Page = () => {
                             <Button
                               id="date-picker"
                               className="w-36 justify-between font-normal"
-                              type="button" 
+                              type="button"
                             >
                               {date ? date.toLocaleDateString() : "Select date"}
                               <ChevronDownIcon />
@@ -269,11 +279,13 @@ const Page = () => {
                     >
                       City
                     </Label>
-                    <Input type="text"
+                    <Input
+                      type="text"
                       name="city"
                       id="city"
                       placeholder="Enter City"
-                      required />
+                      required
+                    />
                   </div>
                 </div>
 

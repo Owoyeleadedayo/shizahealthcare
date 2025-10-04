@@ -79,9 +79,6 @@ export default function Home() {
         className="">
           <div className=" w-[400px] h-[500px] rounded-xl px-8 md:px-0">
             <Carousel effect="fade" dots={false} autoplay autoplaySpeed={7000} className="h-full rounded-xl">
-              <div className="relative w-[400px] h-[500px]">
-                <Image src={'/doc.jpg'} alt="doc" fill className="object-cover rounded-xl" />
-              </div>
               <div className="relative w-[400px] md:w-[700px] h-[300px]">
                 <Image src={'/drr1.jpeg'} alt="doc" fill className="object-cover rounded-xl" />
               </div>
