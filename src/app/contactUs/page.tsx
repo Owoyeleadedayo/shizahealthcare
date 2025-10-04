@@ -128,15 +128,24 @@ const Page = () => {
           </div>
         </motion.div>
 
-        <div className="flex flex-col px-8 md:px-10 lg:px-20 py-5 md:py-10 gap-6 md:gap-4">
+        <div className="flex px-8 md:px-10 lg:px-20 py-5 md:py-10 gap-6 md:gap-4 justify-between items-center">
+          <div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full" />
               <p className="text-lg text-black font-medium">Our Address</p>
             </div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-black font-semibold capitalize">
-                120,Wanda Way Suite 100C Hurst, Texas 76053
-              </h2>
+              120 wanda way, suit 103, Hurst TX 76053
+            </h2>
           </div>
+
+          <div className="flex px-6 py-4 justify-between items-center border-1 border-[#e5e5e5] rounded-lg  gap-4">
+            <div className="flex flex-col ">
+              <p className="text-base text-black font-semibold">Fax No</p>
+              <p className="text-base text-black font-medium">817-523-8807</p>
+            </div>
+          </div>
+        </div>
 
         <div className="relative bg-[url('/bacc.jpg')] bg-cover bg-center px-8 lg:px-40 py-10 md:py-20">
           <div className="absolute inset-0 bg-[#5E5EEE]/60"></div>
